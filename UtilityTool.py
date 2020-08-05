@@ -1,6 +1,7 @@
 from guietta import Gui, _, ___,  Quit
 from ChatCoder import RunChatCodder
 from AutoJoiner import RunAutoJoiner
+from CloverMaker import RunCloverMaker
 
 gui = Gui(
     ["GW2 Utility Tool by Magomir", _, _],
@@ -13,5 +14,7 @@ gui = Gui(
 
 gui.ChatCoder = RunChatCodder
 gui.AutoJoiner = RunAutoJoiner
+gui.CloverMaker = RunCloverMaker
+
 
 gui.run()

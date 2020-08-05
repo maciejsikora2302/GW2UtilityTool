@@ -2,8 +2,8 @@ import keyboard as k
 import time
 import numpy as np
 import base64
-import pygetwindow as gw
 from guietta import Gui
+from OverallUtilities import activate_gw2
 
 main_key = None
 chat_code = "I'm a stupid potato and forgot to pick which kp I want to ping."
@@ -35,20 +35,12 @@ def convert_chat_code_with_amount(cc, amount):
     return "[&" + str(to_ret)[2:-1] + "]"
 
 
-def activate_gw2():
-    windows = gw.getWindowsWithTitle("Guild Wars 2")
-    for window in windows:
-        if window.title == "Guild Wars 2":
-            window.activate()
-
-
 def send_kp(gui):
     global chat_code
 
-    activate_gw2()
-    time.sleep(0.5)
-
     try:
+        #TODO Correct input amount of chatcode
+
         # print(int(gui.Amount))
         # if int(gui.Amount) < 1 or int(gui.Amount) > 250:
         #     raise ValueError
@@ -67,6 +59,8 @@ def send_kp(gui):
         gui2 = Gui(["Wrong input in ping times, try again"])
         gui2.run()
         return
+
+    activate_gw2()
 
     for _ in range(ping_times):
         k.send("enter")
