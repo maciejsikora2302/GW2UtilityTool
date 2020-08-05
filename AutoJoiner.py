@@ -3,7 +3,7 @@ import cv2
 import pyautogui as agui
 import keyboard
 from time import sleep
-from guietta import Gui, _, Quit, ___, R1, III
+from guietta import Gui, _, Quit, ___, R1
 import pygetwindow as gw
 
 
@@ -90,16 +90,18 @@ def run_joiner(gui):
         elif gui.Party.isChecked():
             move_and_click_with_type("party")
 
-gui = Gui(
-    ["AutoJoiner, Created By Magomir", ___, ___],
-    ["Select if you are in squad with Commander or just in normal party, then just press \"Start\" button.", ___, ___],
-    ["To stop the execution of this script just hold ESC button for a moment", ___ , ___],
-    ["Join type:", R1("Commander"), R1("Party")],
-    [["Start"], ___, ___],
-    [Quit, ___, ___]
-          )
 
-gui.Start = run_joiner
+def RunAutoJoiner(mainGui):
+    gui = Gui(
+        ["AutoJoiner, Created By Magomir", ___, ___],
+        ["Select if you are in squad with Commander or just in normal party, then just press \"Start\" button.", ___, ___],
+        ["To stop the execution of this script just hold ESC button for a moment", ___ , ___],
+        ["Join type:", R1("Commander"), R1("Party")],
+        [["Start"], ___, ___],
+        [Quit, ___, ___]
+              )
+
+    gui.Start = run_joiner
 
 
-gui.run()
+    gui.run()
