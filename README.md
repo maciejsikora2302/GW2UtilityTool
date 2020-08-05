@@ -5,5 +5,5 @@ I wanted to create something that will take my manual labor off of me while stil
 ## Features
 - ChatLinker (implemented)
 - AutoJoiner (implemented)
-- CloverMaker (not implemented)
+- CloverMaker (implemented)
 - GroupCreator (not implemented)
