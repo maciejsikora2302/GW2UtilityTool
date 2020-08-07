@@ -6,4 +6,4 @@ I wanted to create something that will take my manual labor off of me while stil
 - ChatLinker (implemented)
 - AutoJoiner (implemented)
 - CloverMaker (implemented)
-- GroupCreator (not implemented)
+- GroupCreator (implemented only on fractals and strikes)
