@@ -7,6 +7,7 @@ def RunChatCodder(mainGui):
         ["ChatCoderImg/Logo.png", ___, ___],
         ['Kill Proof Quantity:', "__Amount__", _],
         ['How many times to ping:', "__Ping__", _],
+        ['Then optional how much and how many times you want to ping extra', "__Amount2__", "__Ping2__"],
         [R1("Dhuum"), _ , "ChatCoderImg/Dhuum's_Token.png"],
         [R1("Quadim v1"), _ , "ChatCoderImg/Qadim's_Token.png"],
         [R1("Quadim v2"), _ , "ChatCoderImg/Ether_Djinn's_Token.png"],
@@ -38,6 +39,8 @@ def RunChatCodder(mainGui):
 
     gui.Amount = "150"
     gui.Ping = "4"
+    gui.Amount2 = "0"
+    gui.Ping2 = "0"
     gui.Inserted = "Or you can provide your own in game link here"
 
     gui.run()

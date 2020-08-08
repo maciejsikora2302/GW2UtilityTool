@@ -18,18 +18,19 @@ def make_cloves(gui):
 
 
     for _ in range(amount):
+        w_time = 0.05
         if is_key_pressed("esc"): break
-        move_and_click("left", "CloverMakerImg/coin.png", clicks=2)
+        move_and_click("left", "CloverMakerImg/coin.png", clicks=2, wait_time=w_time)
         if is_key_pressed("esc"): break
-        move_and_click("left", "CloverMakerImg/ecto.png", clicks=2)
+        move_and_click("left", "CloverMakerImg/ecto.png", clicks=2, wait_time=w_time)
         if is_key_pressed("esc"): break
-        move_and_click("left", "CloverMakerImg/shard.png", clicks=2)
+        move_and_click("left", "CloverMakerImg/shard.png", clicks=2, wait_time=w_time)
         if is_key_pressed("esc"): break
-        move_and_click("left", "CloverMakerImg/stone.png", clicks=2)
+        move_and_click("left", "CloverMakerImg/stone.png", clicks=2, wait_time=w_time)
         if is_key_pressed("esc"): break
-        move_and_click("left", "CloverMakerImg/forge.png")
+        move_and_click("left", "CloverMakerImg/forge.png", wait_time=w_time)
         if is_key_pressed("esc"): break
-        sleep(1.2)
+        sleep(1.3)
 
 
 

@@ -35,8 +35,18 @@ def convert_chat_code_with_amount(cc, amount):
     return "[&" + str(to_ret)[2:-1] + "]"
 
 
+def send_procedure(chat_code):
+    k.send("enter")
+    time.sleep(0.018)
+    k.write(chat_code)
+    time.sleep(0.018)
+    k.send("enter")
+    time.sleep(rand_time(0.1, 0.11))
+
+
 def send_kp(gui):
     global chat_code
+    chat_code2 = ""
 
     try:
         #TODO Correct input amount of chatcode
@@ -45,6 +55,8 @@ def send_kp(gui):
         # if int(gui.Amount) < 1 or int(gui.Amount) > 250:
         #     raise ValueError
         chat_code = convert_chat_code_with_amount(chat_code, int(gui.Amount))
+        if gui.Amount2 != "0" and gui.Ping2 != "0":
+            chat_code2 = convert_chat_code_with_amount(chat_code, int(gui.Amount2))
         print(chat_code)
     except ValueError:
         gui2 = Gui(["Wrong input in KP amount, try again"])
@@ -55,6 +67,8 @@ def send_kp(gui):
 
     try:
         ping_times = int(gui.Ping)
+        ping_times2 = int(gui.Ping)
+
     except ValueError:
         gui2 = Gui(["Wrong input in ping times, try again"])
         gui2.run()
@@ -63,9 +77,9 @@ def send_kp(gui):
     activate_gw2()
 
     for _ in range(ping_times):
-        k.send("enter")
-        time.sleep(0.018)
-        k.write(chat_code)
-        time.sleep(0.018)
-        k.send("enter")
-        time.sleep(rand_time(0.1, 0.11))
+        send_procedure(chat_code)
+
+    if gui.Amount2 != "0" and gui.Ping2 != "0":
+        time.sleep(0.3)
+        for _ in range(ping_times2):
+            send_procedure(chat_code2)

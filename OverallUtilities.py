@@ -65,8 +65,8 @@ def move_and_click(button, template_to_find, clicks = 1, wait_time = 0.1):
     p = get_position_of_template(template_to_find, name)
     if p is not None:
         agui.moveTo(move_point_a_little_bit(p))
-        sleep(0.01)
+        # sleep(0.01)
         agui.click(button=button, clicks= clicks)
-        sleep(0.01)
+        # sleep(0.01)
         move_mouse_to_center()
         sleep(wait_time)
