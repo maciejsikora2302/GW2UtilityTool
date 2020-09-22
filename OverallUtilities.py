@@ -69,4 +69,5 @@ def move_and_click(button, template_to_find, clicks = 1, wait_time = 0.1):
         agui.click(button=button, clicks= clicks)
         # sleep(0.01)
         move_mouse_to_center()
+
         sleep(wait_time)

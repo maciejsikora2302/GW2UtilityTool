@@ -3,4 +3,4 @@ __pycache__
 .idea
 build
 dist
-startup
+startup.ps1
