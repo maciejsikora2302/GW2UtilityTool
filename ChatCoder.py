@@ -5,9 +5,10 @@ import ChatCoderUtilities as util
 def RunChatCodder(mainGui):
     gui = Gui(
         ["ChatCoderImg/Logo.png", ___, ___],
-        ['Kill Proof Quantity:', "__Amount__", _],
-        ['How many times to ping:', "__Ping__", _],
-        ['Then optional how much and how many times you want to ping extra', "__Amount2__", "__Ping2__"],
+        ['Kill Proof Quantity (16-994):', "__Amount__", _],
+        ['How many times to ping (random between lower and upper):', "__PingLower__", "__PingUpper__"],
+        ['If you want to ping more than 250, they will be pinged separately. '
+         'Fe: 350kp will be pinged in form of 250 and 100 separated. ', _, _],
         [R1("Dhuum"), _ , "ChatCoderImg/Dhuum's_Token.png"],
         [R1("Quadim v1"), _ , "ChatCoderImg/Qadim's_Token.png"],
         [R1("Quadim v2"), _ , "ChatCoderImg/Ether_Djinn's_Token.png"],
@@ -20,27 +21,10 @@ def RunChatCodder(mainGui):
 
     gui.Presstoactivate = util.send_kp
 
-    with gui.Dhuum, gui.Quadimv1, gui.Quadimv2, gui.UnstableCosmicEssence:
-        print("Rad button changed")
-        if gui.Dhuum.isChecked():
-            util.chat_code = util.dhuum_chat_code
-        if gui.Quadimv1.isChecked():
-            util.chat_code = util.quadim_v1_chat_code
-        if gui.Quadimv2.isChecked():
-            util.chat_code = util.quadim_v2_chat_code
-        if gui.UnstableCosmicEssence.isChecked():
-            util.chat_code = util.unstable_cosmic_essence_chat_code
-        if gui.LegendaryInsight.isChecked():
-            util.chat_code = util.legendary_insight_chat_code
-        if gui.YourOwn.isChecked():
-            util.chat_code = gui.Inserted
-
-
 
     gui.Amount = "150"
-    gui.Ping = "4"
-    gui.Amount2 = "0"
-    gui.Ping2 = "0"
+    gui.PingLower = "2"
+    gui.PingUpper = "4"
     gui.Inserted = "Or you can provide your own in game link here"
 
     gui.run()
