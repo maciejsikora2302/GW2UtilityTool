@@ -1,3 +1,6 @@
 TmpArea/*
 __pycache__
 .idea
+build
+dist
+startup
